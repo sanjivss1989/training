@@ -6,17 +6,36 @@ package com.development.spring.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Sanjib Bhadra
  *
  */
+@Entity
+@Table(name = "PRODUCT")
 public class Product implements Serializable {
 	
+	@Id
+	@Column(name = "ID")
 	private int id;
+	
+	@Column(name = "PRODUCT_CODE")
 	private int prodCode;
+	
+	@Column(name = "CATEGORY")
 	private String category;
+	
+	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "PROD_DESC")
 	private String prodDesc;
+	
+	@Column(name = "SYS_CREATION_DATE")
 	private Date creationDate;
 	
 	
