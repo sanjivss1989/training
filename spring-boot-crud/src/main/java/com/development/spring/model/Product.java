@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author Sanjib Bhadra
  *
@@ -19,6 +21,11 @@ import javax.persistence.Table;
 @Table(name = "PRODUCT")
 public class Product implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1862283126105964871L;
+
 	@Id
 	@Column(name = "ID")
 	private int id;
@@ -35,18 +42,25 @@ public class Product implements Serializable {
 	@Column(name = "PROD_DESC")
 	private String prodDesc;
 	
-	@Column(name = "SYS_CREATION_DATE")
-	private Date creationDate;
+	@Column(name = "PRICE")
+	private double price;
 	
 	
-	public Product(int id, int prodCode, String category, String name, String prodDesc, Date creationDate) {
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Product(int id, int prodCode, String category, String name, String prodDesc,double price) {
 		super();
 		this.id = id;
 		this.prodCode = prodCode;
 		this.category = category;
 		this.name = name;
 		this.prodDesc = prodDesc;
-		this.creationDate = creationDate;
+		this.price =price;
+		
 	}
 	
 	
@@ -99,29 +113,28 @@ public class Product implements Serializable {
 		this.prodDesc = prodDesc;
 	}
 
-
-	public Date getCreationDate() {
-		return creationDate;
+	public double getPrice() {
+		return price;
 	}
 
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
+	public void setPrice(double price) {
+		this.price = price;
 	}
-
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((creationDate == null) ? 0 : creationDate.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + prodCode;
 		result = prime * result + ((prodDesc == null) ? 0 : prodDesc.hashCode());
 		return result;
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -135,11 +148,6 @@ public class Product implements Serializable {
 			if (other.category != null)
 				return false;
 		} else if (!category.equals(other.category))
-			return false;
-		if (creationDate == null) {
-			if (other.creationDate != null)
-				return false;
-		} else if (!creationDate.equals(other.creationDate))
 			return false;
 		if (id != other.id)
 			return false;
@@ -157,7 +165,7 @@ public class Product implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
+
+
 
 }
