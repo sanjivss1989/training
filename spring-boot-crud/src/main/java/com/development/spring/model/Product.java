@@ -10,6 +10,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -31,18 +33,22 @@ public class Product implements Serializable {
 	private int id;
 	
 	@Column(name = "PRODUCT_CODE")
+	@NotNull
 	private int prodCode;
 	
 	@Column(name = "CATEGORY")
 	private String category;
 	
 	@Column(name = "NAME")
+	@Size(min= 2 ,message = "Name should have at least 2 characters")
 	private String name;
 	
 	@Column(name = "PROD_DESC")
+	@Size(min= 10 ,message = "Name should have at least 10 characters")
 	private String prodDesc;
 	
 	@Column(name = "PRICE")
+	@NotNull
 	private double price;
 	
 	

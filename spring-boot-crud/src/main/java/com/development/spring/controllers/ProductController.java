@@ -6,6 +6,8 @@ package com.development.spring.controllers;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +36,7 @@ public class ProductController {
 	private ProductService service;
 	
 	@PostMapping(path = ApplicationConstants.CREATE_PROD_ENDPOINT)
-	public ResponseEntity<Object> createProduct(@RequestBody Product p){
+	public ResponseEntity<Object> createProduct(@Valid @RequestBody Product p){
 		Product product = service.saveProduct(p);
 		URI location = ServletUriComponentsBuilder
 		               .fromCurrentRequest()
