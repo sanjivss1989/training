@@ -9,11 +9,11 @@ package com.development.spring.constants;
  */
 public interface ApplicationConstants {
 	
-	public static final String CREATE_PROD_ENDPOINT     = "/api/create";
-	public static final String GET_PRODUCTS_ALL         = "api/viewAll";
-	public static final String UPDATE_PRODUCT_ENDPOINT  = "/api/update/{id}";
-	public static final String GET_PRODUCT_ENDPOINT     = "/api/get/{id}" ;
-	public static final String DELETE_PRODUCT_ID        = "/api/delete/{id}";
+	public static final String CREATE_PROD_ENDPOINT     = "/api/transaction/create";
+	public static final String GET_PRODUCTS_ALL         = "api/transaction/viewAll";
+	public static final String UPDATE_PRODUCT_ENDPOINT  = "/api/transaction/update/{id}";
+	public static final String GET_PRODUCT_ENDPOINT     = "/api/transaction/get/{id}" ;
+	public static final String DELETE_PRODUCT_ID        = "/api/transaction/delete/{id}";
 	
 	public static final String AUTH                     = "api/auth";
 }
