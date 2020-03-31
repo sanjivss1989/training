@@ -50,8 +50,7 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
-		
-		
+		<!-- https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin -->
 
 		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-hateoas</artifactId> 
 			</dependency> -->
@@ -92,6 +91,26 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+		<!-- 	<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.6</version>
+
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+                  <repository>sanjivss1989/spring-boot-crud</repository>
+                  <tag>0.0.1-SNAPSHOT</tag>
+                  <skipDockerInfo>true</skipDockerInfo>
+				</configuration>
+
+			</plugin> -->
 		</plugins>
 	</build>
 
